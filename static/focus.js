@@ -1,6 +1,6 @@
 const API = {
     organizationList: "/orgsList",
-    analytics: "/api3/analytics",
+    analytics: "/api3/analitics",
     orgReqs: "/api3/reqBase",
     buhForms: "/api3/buh",
 };
@@ -20,7 +20,7 @@ async function run() {
         addInOrgsMap(orgsMap, buh, "buhForms");
         render(orgsMap, orgOgrns);
     } catch (error) {
-        console.error(error);
+        
     }
 }
 
@@ -31,6 +31,7 @@ function sendRequest(url) {
         if (response.ok) {
             return response.json();
         }
+        alert(`${response.status} ${response.statusText}`);
         throw new Error('Request failed');
     });
 }
